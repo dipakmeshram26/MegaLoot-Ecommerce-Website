@@ -10,7 +10,26 @@
 <body>
 <nav class="navbar">
     <div class="container nav-content">
-        <div class="logo"><a href="index.html" style="color:inherit;text-decoration:none;">DealHub</a></div>
+        <div class="logo">DealHub</div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#trending">Trending</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="search-box">
+            <form id="searchForm" class="search-form" action="search.html" method="get">
+                <input type="text" id="searchInput" name="q" placeholder="Search products..." autocomplete="off">
+            </form>
+            <div id="searchSuggestions" class="search-suggestions"></div>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
     </div>
 </nav>
 
@@ -27,6 +46,7 @@
 </footer>
 
 <script src="products.js"></script>
+<script src="script.js"></script>
 <script>
     function queryParam(name){
         const url = new URL(window.location.href);
@@ -69,7 +89,55 @@
                     </section>
                 </div>
             </div>
+
+            <section style="margin-top:28px;">
+                <h3>Why this product is useful</h3>
+                <ul>
+                    <li>Designed to solve common problems quickly and efficiently.</li>
+                    <li>Reliable performance and good value for money.</li>
+                    <li>Compact design makes it ideal for daily use and travel.</li>
+                </ul>
+            </section>
+
+            <section style="margin-top:22px;">
+                <h3>Specifications</h3>
+                <ul>
+                    <li>Model: ${p.model || 'N/A'}</li>
+                    <li>Weight: ${p.weight || 'N/A'}</li>
+                    <li>Dimensions: ${p.dimensions || 'N/A'}</li>
+                    <li>Color: ${p.color || 'Various'}</li>
+                </ul>
+            </section>
+
+            <section style="margin-top:22px;">
+                <h3>Customer Reviews</h3>
+                <div class="reviews">
+                    <div class="review" style="margin-bottom:10px;"><strong>Alex</strong> — ★★★★☆<p style="margin:6px 0;color:var(--muted);">Great value for money, fast delivery and solid build.</p></div>
+                    <div class="review" style="margin-bottom:10px;"><strong>Priya</strong> — ★★★★★<p style="margin:6px 0;color:var(--muted);">Exceeded expectations—highly recommend.</p></div>
+                </div>
+            </section>
+
+            <section style="margin-top:22px;">
+                <h3>Related Products</h3>
+                <div id="relatedProducts" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;"></div>
+            </section>
         `;
+
+        // Populate related products dynamically
+        const relatedContainer = document.getElementById('relatedProducts');
+        const related = (window.products || []).filter(x => x.id !== p.id).slice(0,4);
+        related.forEach(r => {
+            const a = document.createElement('a');
+            a.href = `product.html?id=${r.id}`;
+            a.className = 'product-card';
+            a.style.cssText = 'display:block;width:160px;text-decoration:none;color:inherit;padding:10px;';
+            a.innerHTML = `
+                <img src="${r.image||''}" alt="${r.title}" style="width:100%;height:100px;object-fit:cover;border-radius:8px;">
+                <div style="font-weight:700;margin-top:8px;font-size:13px;">${r.title}</div>
+                <div style="color:#9ca3af;font-size:13px;">$${r.price}</div>
+            `;
+            relatedContainer.appendChild(a);
+        });
     }
 </script>
 </body>

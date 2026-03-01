@@ -1,0 +1,134 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Blog - DealHub</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .blog-page {
+            padding-top: 110px;
+            padding-bottom: 60px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .blog-card {
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 10px 26px rgba(2, 6, 23, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 36px rgba(2, 6, 23, 0.12);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .blog-content {
+            padding: 16px;
+        }
+
+        .blog-meta {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .blog-title {
+            font-size: 20px;
+            margin: 0 0 8px;
+            line-height: 1.35;
+            color: #0f172a;
+        }
+
+        .blog-excerpt {
+            margin: 0 0 14px;
+            color: #475569;
+            font-size: 14px;
+            line-height: 1.65;
+        }
+
+        .blog-link {
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .blog-link:hover {
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="container nav-content">
+        <div class="logo"><a href="index.html" style="color:inherit;text-decoration:none;">DealHub</a></div>
+        <div class="nav-links" style="display:flex;">
+            <a href="index.html">Home</a>
+            <a href="blog.html" style="color:#2563eb;">Blog</a>
+        </div>
+    </div>
+</nav>
+
+<main class="blog-page">
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <h1 class="section-title" style="margin-bottom:10px;">DealHub Blog</h1>
+            <p style="text-align:center;color:var(--muted);margin-bottom:34px;">Tips, product comparisons, and buying guides to help you choose better deals.</p>
+
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=60" alt="Smartphone buying guide">
+                    <div class="blog-content">
+                        <p class="blog-meta">February 2026 • Buying Guide</p>
+                        <h2 class="blog-title">How to Pick the Best Budget Smartphone in 2026</h2>
+                        <p class="blog-excerpt">Display, battery, camera, and processor ko compare karne ka practical method, taaki aap overpay na karein.</p>
+                        <a href="#" class="blog-link">Read more</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1526178612497-8d2f8c8f3f66?auto=format&fit=crop&w=1200&q=60" alt="Wearables and smartwatch comparison">
+                    <div class="blog-content">
+                        <p class="blog-meta">January 2026 • Comparison</p>
+                        <h2 class="blog-title">Top Smartwatches Compared: Fitness, Battery, and Value</h2>
+                        <p class="blog-excerpt">Kaun sa smartwatch workouts, sleep tracking, aur daily notifications ke liye best hai, ek simple side-by-side view.</p>
+                        <a href="#" class="blog-link">Read more</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1585386959984-a4155227c2b8?auto=format&fit=crop&w=1200&q=60" alt="Audio accessories setup">
+                    <div class="blog-content">
+                        <p class="blog-meta">December 2025 • Audio</p>
+                        <h2 class="blog-title">Headphones vs Gaming Headset: Which One Should You Buy?</h2>
+                        <p class="blog-excerpt">Music quality, mic clarity, comfort, aur long-session use ke basis par clear recommendation framework.</p>
+                        <a href="#" class="blog-link">Read more</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div style="color:#fff;padding:30px 0;">© 2026 DealHub</div>
+    </div>
+</footer>
+</body>
+</html>
